@@ -6,14 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/editTextNumberOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter First number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintDimensionRatio="1:1"
+        android:layout_margin="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="0.25"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/buttonMinus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="0.25"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/buttonMulti"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="0.25"
+                android:text="*" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:text="/" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,6 +81,8 @@
                 android:id="@+id/buttonTwo"
                 android:layout_width="0dp"
                 android:layout_weight="0.33"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
                 android:layout_height="match_parent"
                 android:text="2" />
             <Button
@@ -57,6 +109,8 @@
                 android:id="@+id/buttonFive"
                 android:layout_width="0dp"
                 android:layout_weight="0.33"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
                 android:layout_height="match_parent"
                 android:text="5" />
             <Button
@@ -83,6 +137,8 @@
                 android:id="@+id/buttonEight"
                 android:layout_width="0dp"
                 android:layout_weight="0.33"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
                 android:layout_height="match_parent"
                 android:text="8" />
             <Button
@@ -92,5 +148,36 @@
                 android:layout_height="match_parent"
                 android:text="9" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttonZero"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_marginEnd="12dp"
+                android:layout_height="match_parent"
+                android:text="0" />
+            <Button
+                android:id="@+id/buttonEqual"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:text="=" />
+        </LinearLayout>
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextNumberTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Enter Second number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberOne" />
 </androidx.constraintlayout.widget.ConstraintLayout>
