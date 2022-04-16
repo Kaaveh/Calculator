@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         val multiButton = findViewById<Button>(R.id.buttonMulti)
         val divideButton = findViewById<Button>(R.id.buttonDivide)
 
+        val buttonOne = findViewById<Button>(R.id.buttonOne)
+
         addButton.setOnClickListener {
             getEditText()
             resultText.text = (firstNumber + secondNumber).toString()
@@ -43,6 +45,15 @@ class MainActivity : AppCompatActivity() {
         divideButton.setOnClickListener {
             getEditText()
             resultText.text = (firstNumber / secondNumber).toString()
+        }
+
+        buttonOne.setOnClickListener {
+            if (firstNumberText.hasFocus()){
+                firstNumberText.append("1")
+            }
+            if (secondNumberText.hasFocus()){
+                secondNumberText.append("1")
+            }
         }
     }
 
