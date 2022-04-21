@@ -30,21 +30,25 @@ class MainActivity : AppCompatActivity() {
 
         val buttonOne = findViewById<Button>(R.id.buttonOne)
 
+        viewModel.result.observe(this){
+            resultText.text = it.toString()
+        }
+
         addButton.setOnClickListener {
             getEditText()
-            resultText.text = (viewModel.firstNumber + viewModel.secondNumber).toString()
+            viewModel.calculate("+")
         }
         minusButton.setOnClickListener {
             getEditText()
-            resultText.text = (viewModel.firstNumber - viewModel.secondNumber).toString()
+            viewModel.calculate("-")
         }
         multiButton.setOnClickListener {
             getEditText()
-            resultText.text = (viewModel.firstNumber * viewModel.secondNumber).toString()
+            viewModel.calculate("*")
         }
         divideButton.setOnClickListener {
             getEditText()
-            resultText.text = (viewModel.firstNumber / viewModel.secondNumber).toString()
+            viewModel.calculate("/")
         }
 
         buttonOne.setOnClickListener {
