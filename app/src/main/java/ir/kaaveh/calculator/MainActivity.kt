@@ -5,14 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.activity.viewModels
 
 class MainActivity : AppCompatActivity() {
 
-    private var firstNumber = 0.0
-    private var secondNumber = 0.0
-
     private lateinit var firstNumberText: EditText
     private lateinit var secondNumberText: EditText
+
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,19 +32,19 @@ class MainActivity : AppCompatActivity() {
 
         addButton.setOnClickListener {
             getEditText()
-            resultText.text = (firstNumber + secondNumber).toString()
+            resultText.text = (viewModel.firstNumber + viewModel.secondNumber).toString()
         }
         minusButton.setOnClickListener {
             getEditText()
-            resultText.text = (firstNumber - secondNumber).toString()
+            resultText.text = (viewModel.firstNumber - viewModel.secondNumber).toString()
         }
         multiButton.setOnClickListener {
             getEditText()
-            resultText.text = (firstNumber * secondNumber).toString()
+            resultText.text = (viewModel.firstNumber * viewModel.secondNumber).toString()
         }
         divideButton.setOnClickListener {
             getEditText()
-            resultText.text = (firstNumber / secondNumber).toString()
+            resultText.text = (viewModel.firstNumber / viewModel.secondNumber).toString()
         }
 
         buttonOne.setOnClickListener {
@@ -59,9 +59,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun getEditText() {
         if (firstNumberText.text.toString().isNotEmpty())
-            firstNumber = firstNumberText.text.toString().toDouble()
+            viewModel.firstNumber = firstNumberText.text.toString().toDouble()
 
         if (secondNumberText.text.toString().isNotEmpty())
-            secondNumber = secondNumberText.text.toString().toDouble()
+            viewModel.secondNumber = secondNumberText.text.toString().toDouble()
     }
 }
